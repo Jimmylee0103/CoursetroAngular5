@@ -15,8 +15,8 @@
       <input type="submit" class="btn" value={{btnText}} (click)="addItem()"> 
     </form>
   </div>
-  <div class="col">
-    <p class="life-container" *ngFor="let goal of goals">
+  <div class="col" [@goals]="goals.length">
+    <p class="life-container" *ngFor="let goal of goals" (click)="removeItem(goal)">
     {{goal}}
     </p>
   </div>
